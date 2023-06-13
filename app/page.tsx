@@ -1,7 +1,84 @@
-import { CustomFilter, Hero, SearchBar } from '@/components'
+import { CarCard, CustomFilter, Hero, SearchBar } from '@/components'
+import { fetchCars } from '@/utils'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
+  // const allCars = await fetchCars()
+  const allCars = [
+    {
+      city_mpg: 23,
+      class: 'compact car',
+      combination_mpg: 24,
+      cylinders: 4,
+      displacement: 1.6,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 26,
+      make: 'toyota',
+      model: 'corolla',
+      transmission: 'a',
+      year: 1993
+    },
+    {
+      city_mpg: 23,
+      class: 'compact car',
+      combination_mpg: 26,
+      cylinders: 4,
+      displacement: 1.6,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 31,
+      make: 'toyota',
+      model: 'corolla',
+      transmission: 'm',
+      year: 1993
+    },
+    {
+      city_mpg: 23,
+      class: 'compact car',
+      combination_mpg: 25,
+      cylinders: 4,
+      displacement: 1.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 30,
+      make: 'toyota',
+      model: 'corolla',
+      transmission: 'a',
+      year: 1993
+    },
+    {
+      city_mpg: 23,
+      class: 'compact car',
+      combination_mpg: 26,
+      cylinders: 4,
+      displacement: 1.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 30,
+      make: 'toyota',
+      model: 'corolla',
+      transmission: 'm',
+      year: 1993
+    },
+    {
+      city_mpg: 23,
+      class: 'small station wagon',
+      combination_mpg: 25,
+      cylinders: 4,
+      displacement: 1.8,
+      drive: 'fwd',
+      fuel_type: 'gas',
+      highway_mpg: 30,
+      make: 'toyota',
+      model: 'corolla wagon',
+      transmission: 'a',
+      year: 1993
+    }
+  ]
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
+
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -19,6 +96,23 @@ export default function Home() {
             <CustomFilter title="year" />
           </div>
         </div>
+        {
+          !isDataEmpty ? (
+            <section>
+              <div className="home__cars-wrapper">
+                {allCars?.map(car => (
+                  <CarCard car={car} />
+                ))}
+              </div>
+            </section>
+          ) : (
+            <div className="home__error-container">
+              <h2 className="text-black text-xl font-bold">Ooops, no results</h2>
+              <p>{allCars?.message}</p>
+            </div>
+          )
+        }
+
       </div>
     </main>
   )
