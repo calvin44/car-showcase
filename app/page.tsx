@@ -1,81 +1,17 @@
 import { CarCard, CustomFilter, Hero, SearchBar } from '@/components'
+import { fuels, yearsOfProduction } from '@/constants'
+import { HomeProps } from '@/types'
 import { fetchCars } from '@/utils'
-import Image from 'next/image'
+// import { allCars } from '@/utils/mockData'
 
-export default async function Home() {
-  // const allCars = await fetchCars()
-  const allCars = [
-    {
-      city_mpg: 23,
-      class: 'compact car',
-      combination_mpg: 24,
-      cylinders: 4,
-      displacement: 1.6,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 26,
-      make: 'toyota',
-      model: 'corolla',
-      transmission: 'a',
-      year: 1993
-    },
-    {
-      city_mpg: 23,
-      class: 'compact car',
-      combination_mpg: 26,
-      cylinders: 4,
-      displacement: 1.6,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 31,
-      make: 'toyota',
-      model: 'corolla',
-      transmission: 'm',
-      year: 1993
-    },
-    {
-      city_mpg: 23,
-      class: 'compact car',
-      combination_mpg: 25,
-      cylinders: 4,
-      displacement: 1.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 30,
-      make: 'toyota',
-      model: 'corolla',
-      transmission: 'a',
-      year: 1993
-    },
-    {
-      city_mpg: 23,
-      class: 'compact car',
-      combination_mpg: 26,
-      cylinders: 4,
-      displacement: 1.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 30,
-      make: 'toyota',
-      model: 'corolla',
-      transmission: 'm',
-      year: 1993
-    },
-    {
-      city_mpg: 23,
-      class: 'small station wagon',
-      combination_mpg: 25,
-      cylinders: 4,
-      displacement: 1.8,
-      drive: 'fwd',
-      fuel_type: 'gas',
-      highway_mpg: 30,
-      make: 'toyota',
-      model: 'corolla wagon',
-      transmission: 'a',
-      year: 1993
-    }
-  ]
+export default async function Home({ searchParams }: HomeProps) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+    model: searchParams.model || ""
+  })
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars
 
@@ -92,8 +28,8 @@ export default async function Home() {
         <div className="home__filters">
           <SearchBar />
           <div className="home__filter-container">
-            <CustomFilter title="fuel" />
-            <CustomFilter title="year" />
+            <CustomFilter title="fuel" options={fuels} />
+            <CustomFilter title="year" options={yearsOfProduction} />
           </div>
         </div>
         {
