@@ -1,8 +1,7 @@
-import { CarCard, CustomFilter, Hero, SearchBar } from '@/components'
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from '@/components'
 import { fuels, yearsOfProduction } from '@/constants'
 import { HomeProps } from '@/types'
 import { fetchCars } from '@/utils'
-// import { allCars } from '@/utils/mockData'
 
 export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchCars({
@@ -40,11 +39,13 @@ export default async function Home({ searchParams }: HomeProps) {
                   <CarCard car={car} />
                 ))}
               </div>
+              <ShowMore
+                pageNumber={(searchParams.limit || 10) / 10}
+                isNext={(searchParams.limit || 10) > allCars.length} />
             </section>
           ) : (
             <div className="home__error-container">
               <h2 className="text-black text-xl font-bold">Ooops, no results</h2>
-              <p>{allCars?.message}</p>
             </div>
           )
         }
