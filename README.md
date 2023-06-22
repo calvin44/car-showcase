@@ -14,20 +14,16 @@ Welcome to the Car Showcase App! This is a web application built using Next.js, 
 To run the Car Showcase App locally, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
+<pre><code>git clone https://github.com/calvin44/car-showcase.git</code></pre>
 
-   <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">git clone https://github.com/calvin44/car-showcase.git
-   </code></div></div></pre>
 2. Navigate to the project directory:
+<pre><code>cd car-showcase</code></pre>
 
-   <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">cd car-showcase-app
-   </code></div></div></pre>
 3. Install the dependencies:
+<pre><code>yarn</code></pre>
 
-   <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">yarn
-   </code></div></div></pre>
-4. Run development server
-
-   <pre><div class="bg-black rounded-md mb-4"><div class="flex items-center relative text-gray-200 bg-gray-800 px-4 py-2 text-xs font-sans justify-between rounded-t-md"><span>bash</span><button class="flex ml-auto gap-2"><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>Copy code</button></div><div class="p-4 overflow-y-auto"><code class="!whitespace-pre hljs language-bash">yarn run dev</code></div></div></pre>
+4. Run the development server:
+<pre><code>yarn run dev</code></pre>
 
 ## Usage
 
@@ -40,15 +36,15 @@ To run the Car Showcase App locally, follow these steps:
 
 Contributions to the Car Showcase App are welcome! If you find any bugs or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-Before making any contributions, please review the [contribution guidelines](https://chat.openai.com/CONTRIBUTING.md).
+Before making any contributions, please review the [contribution guidelines](https://github.com/calvin44/car-showcase/blob/main/CONTRIBUTING.md).
 
 ## License
 
-This project is licensed under the [MIT License](https://chat.openai.com/LICENSE).
+This project is licensed under the [MIT License](https://github.com/calvin44/car-showcase/blob/main/LICENSE).
 
 ## Acknowledgments
 
 * The Car Showcase App utilizes the following APIs:
-  * [API-Ninjas Car API](https://api-ninjas.com/api/cars)
-  * [Imagin Studio API](https://api.imagin.studio/)
-* Special thanks to the developers of Next.js, Tailwind CSS, and TypeScript for their amazing tools and libraries.
+* [API-Ninjas Car API](https://api-ninjas.com/api/cars)
+* [Imagin Studio API](https://api.imagin.studio/)
+* Special thanks to the developers of Next.js, Tailwind CSS, and TypeScript 
