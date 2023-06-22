@@ -1,10 +1,9 @@
 import { CarProps, FilterProps } from '@/types'
 
 export async function fetchCars(filters: FilterProps) {
-
   const { manufacturer, year, model, limit, fuel } = filters
   const headers = {
-    'X-RapidAPI-Key': 'e906e9c3e8msh1776ea2238ae173p1284f1jsn15d796f021f4',
+    'X-RapidAPI-Key': process.env.NEXT_PUBLIC_RAPID_API_KEY || "",
     'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com'
   }
 
@@ -45,10 +44,9 @@ export const updateSearchParams = (type: string, value: string) => {
 }
 
 export const generateCarImageUrl = (car: CarProps, angle?: string) => {
-  // key ...
   const url = new URL("https://cdn.imagin.studio/getimage")
   const { make, year, model } = car
-  url.searchParams.append("customer", "twiscoollab")
+  url.searchParams.append("customer", process.env.NEXT_PUBLIC_IMAGIN_DOMAIN || "")
   url.searchParams.append("make", make)
   url.searchParams.append("modelFamily", model.split(" ")[0])
   url.searchParams.append("zoomType", "fullscreen")
